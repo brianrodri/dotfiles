@@ -1,1 +1,1 @@
-Some dot files I use to make my arch setup feel more like home
+The settings I use to make arch my home away from home
