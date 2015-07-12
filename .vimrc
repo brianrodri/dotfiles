@@ -134,7 +134,7 @@ augroup END
 augroup filetype_py
 autocmd!
 autocmd FileType python :nnoremap J Ji <esc>
-autocmd FileType python :nnoremap I miggo
+autocmd FileType python :nnoremap <leader>I miggo
 augroup END
 " }}}
 " }}}
@@ -173,16 +173,18 @@ nnoremap       <leader>k          O<Esc>j
 nnoremap       <leader>o          :CtrlP<cr>
 nnoremap       <leader>w          :w<cr>
 vnoremap       <leader>y          "*y
+nnoremap       <leader>y          "*y
 vnoremap       <leader>d          "*d
-nnoremap       <leader>p          "*p
+nnoremap       <leader>d          "*d
 nnoremap       <leader>p          "*p
 vnoremap       <leader>p          "*p
-vnoremap       <leader>p          "*p
+nnoremap       <leader>P          "*P
+vnoremap       <leader>P          "*P
 nnoremap       <leader>ev         :split $MYVIMRC<CR>
 nnoremap       <leader>sv         :source $MYVIMRC<CR>
-nnoremap       <leader>osa        :execute "leftabove vsplit " . bufname("#")
-nnoremap       <leader>osb        :execute "rightbelow vsplit " . bufname("#")
-nnoremap       <leader>osl        :execute "leftabove split " . bufname("#")
+nnoremap       <leader>osa        :execute "leftabove split " . bufname("#")
+nnoremap       <leader>osb        :execute "rightbelow split " . bufname("#")
+nnoremap       <leader>osl        :execute "leftabove vsplit " . bufname("#")
 nnoremap       <leader>osr        :execute "rightbelow vsplit " . bufname("#")
 " }}}
 " }}}
