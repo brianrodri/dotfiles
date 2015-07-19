@@ -17,7 +17,7 @@ else
 endif
 " }}}
 
-Plug 'benjaminwhite/Benokai'
+Plug 'Valloric/YouCompleteMe'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-line'
@@ -32,7 +32,6 @@ Plug 'suan/vim-instant-markdown'
 Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 Plug 'xolox/vim-easytags'
 Plug 'xolox/vim-misc'
 
@@ -135,6 +134,8 @@ augroup filetype_py
 autocmd!
 autocmd FileType python :nnoremap J Ji <esc>
 autocmd FileType python :nnoremap <leader>I miggo
+autocmd FileType python :nnoremap <leader>m :w<cr>:!python3 %<cr>
+autocmd FileType python :vnoremap <leader>m <esc>:w<cr>:!python3 %<cr>
 augroup END
 " }}}
 " }}}
@@ -159,11 +160,13 @@ nnoremap G mrG
 " Leader Mappings ---------------- {{{
 let mapleader = "\<Space>"
 let localleader = ","
+" [github for argalign.py](https://github.com/thatbrod/scripts/blob/master/argalign.py)
 xnoremap       <leader>a          :!~/Dropbox/projects/python/argalign.py -r 1
 xnoremap       <leader>w          :!python -c 'import textwrap, sys; print(textwrap.fill("".join(sys.stdin.read().splitlines()), 80));'<CR><CR>
 xnoremap       <leader>s          :!sort<cr>
-nnoremap       <leader>e          80\|
+nnoremap       <leader>E          80\|
 nnoremap       <leader>m          :make<CR>
+nnoremap       <leader>h          :%s/\v
 vnoremap       <leader>q          :q!<CR>
 nnoremap       <leader>q          :q!<CR>
 nnoremap       <leader>x          :q
